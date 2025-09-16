@@ -26,11 +26,11 @@
     <li><a href="https://ru.wikipedia.org/wiki/HTML#История">ссылка на фрагмент страницы стороннего сайта</a></li>
     <li>ссылки из прямоугольных и круглых областей картинки (map):<br>
         <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><rect width='320' height='160' fill='%23dddddd'/><rect x='20' y='20' width='120' height='60' fill='%23777777'/><circle cx='230' cy='80' r='36' fill='%23999999'/></svg>"
+                src="map.svg"
                 alt="карта изображения" width="320" height="160" usemap="#m">
         <map name="m">
-            <area shape="rect" coords="20,20,140,80" href="https://kubsu.ru">
-            <area shape="circle" coords="230,80,36" href="https://developer.mozilla.org/">
+            <area shape="rect" coords="20,20,140,80" href="https://kubsu.ru" alt="Переход на kubsu.ru">
+            <area shape="circle" coords="230,80,36" href="https://developer.mozilla.org/" alt="Переход на MDN">
         </map>
     </li>
     <li><a href="">ссылка с пустым href</a></li>
@@ -48,7 +48,8 @@
 </ul>
 
 <h2 id="frag">Форма</h2>
-<form action="" method="get">
+
+<form method="get">
     <p>
         <label for="fio">ФИО</label><br>
         <input id="fio" name="fio" type="text" required>
