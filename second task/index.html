@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class = "site-header">
+        <div class="header-inner container">
+            <div class="logo">Лого</div>
+            <nav class="menu" aria-label="Главное меню">
+                <a href="https://apple.com/">Ссылка меню 1</a>
+                <a href="https://tesla.com">Ссылка 2</a>
+                <a href="https://sony.com">Ссылка 3</a>
+            </nav>
+            <h1 class = "site-title">Название сайта</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+        <h2>Список гиперссылок</h2>
+<ul>
+    <li><a href="http://kubsu.ru">абсолютная ссылка на kubsu.ru (http)</a></li>
+    <li><a href="https://kubsu.ru">абсолютная ссылка на kubsu.ru (https)</a></li>
+    <li><a href="https://kubsu.ru"><img src="img.png" alt="kubsu"></a></li>
+    <li><a href="/contacts.html">сокращённая ссылка на внутреннюю страницу</a></li>
+    <li><a href="/">сокращенную ссылку на главную страницу</a></li>
+    <li><a href="#frag">ссылка на фрагмент текущей страницы</a></li>
+    <li><a href="https://kubsu.ru/search?q=html&lang=ru&page=1">ссылка с тремя параметрами в URL</a></li>
+    <li><a href="https://kubsu.ru/?id=123">ссылка с параметром id в URL</a></li>
+    <li><a href="./page.html">относительная ссылка на страницу в текущем каталоге</a></li>
+    <li><a href="about/index.html">относительная на страницу в каталоге about</a></li>
+    <li><a href="../index.html">относительная на страницу уровнем выше</a></li>
+    <li><a href="../../index.html">относительная на страницу двумя уровнями выше</a></li>
+    <li>контекстная ссылка в тексте абзаца:
+        <p>Читайте <a href="https://developer.mozilla.org/ru/docs/Web/HTML">документацию HTML</a>.</p>
+    </li>
+    <li><a href="https://ru.wikipedia.org/wiki/HTML#История">ссылка на фрагмент страницы стороннего сайта</a></li>
+    <li>ссылки из прямоугольных и круглых областей картинки (map):<br>
+        <img
+                src="map.svg"
+                alt="карта изображения" width="320" height="160" usemap="#m">
+        <map name="m">
+            <area shape="rect" coords="20,20,140,80" href="https://kubsu.ru" alt="Переход на kubsu.ru">
+            <area shape="circle" coords="230,80,36" href="https://developer.mozilla.org/" alt="Переход на MDN">
+        </map>
+    </li>
+    <li><a href="">ссылка с пустым href</a></li>
+    <li><a>ссылка без href</a></li>
+    <li><a href="https://example.com" rel="nofollow">ссылка, по которой запрещён переход поисковикам</a></li>
+    <li><a href="https://example.com/secret" rel="noindex">ссылка, запрещённая для индексации поисковиками</a></li>
+    <li>нумерованный список ссылок с подписями title:
+        <ol>
+            <li><a href="https://html.spec.whatwg.org/" title="Спецификация HTML">HTML Spec</a></li>
+            <li><a href="https://validator.w3.org/" title="Проверка разметки">W3C Validator</a></li>
+            <li><a href="https://kubsu.ru/" title="КУБГУ">kubsu.ru</a></li>
+        </ol>
+    </li>
+    <li><a href="ftp://user:password@ftp.example.com/readme.txt">ссылка на файл на сервере FTP с авторизацией</a></li>
+</ul>
+
+<h2>Таблица</h2>
+    <table class = "data-table">
+        <thead>
+        <tr>
+            <th>Колонка 1</th>
+            <th>Колонка 2</th>
+            <th>Колонка 3</th>
+            <th>Колонка 4</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="cell" colspan="3">Ячейка 11-12-13</td>
+            <td rowspan="2">Ячейка 14</td>
+        </tr>
+        <tr>
+            <td>Ячейка 21</td>
+            <td>Ячейка 22</td>
+            <td>Ячейка 23</td>
+        </tr>
+        <tr>
+            <td class="cell" rowspan="2" colspan="2">Ячейка 31-32,41-42</td>
+            <td class="cell" colspan="2">Ячейка 32-34</td>
+        </tr>
+        <tr>
+            <td>Ячейка 43</td>
+            <td>Ячейка 44</td>
+        </tr>
+        <tr>
+            <td>Ячейка 51</td>
+            <td>Ячейка 52</td>
+            <td>Ячейка 53</td>
+            <td>Ячейка 54</td>
+        </tr>
+        <tr>
+            <td>Ячейка 61</td>
+            <td>Ячейка 62</td>
+            <td>Ячейка 63</td>
+            <td>Ячейка 64</td>
+        </tr>
+    </table>
+            </section>
+        <section class="card">
+<h2 id="frag">Форма</h2>
+
+<form method="get">
+    <p>
+        <label for="fio">ФИО</label><br>
+        <input id="fio" name="fio" type="text" required>
+    </p>
+    <p>
+        <label for="phone">Телефон</label><br>
+        <input id="phone" name="phone" type="tel" required>
+    </p>
+    <p>
+        <label for="email">e-mail</label><br>
+        <input id="email" name="email" type="email" required>
+    </p>
+    <p>
+        <label for="date">Дата рождения</label><br>
+        <input id="date" name="date" type="date" required>
+    </p>
+    <p>
+        Пол<br>
+        <label><input type="radio" name="sex" value="male" required>Мужской</label><br>
+        <label><input type="radio" name="sex" value="female">Женский</label>
+    </p>
+    <p>
+        <label for="lang">Любимый язык программирования</label><br>
+        <select id="lang" name="lang" multiple size="11" required>
+            <option>Pascal</option>
+            <option>C</option>
+            <option>C++</option>
+            <option>JavaScript</option>
+            <option>PHP</option>
+            <option>Python</option>
+            <option>Java</option>
+            <option>Haskell</option>
+            <option>Clojure</option>
+            <option>Prolog</option>
+            <option>Scala</option>
+        </select>
+    </p>
+    <p>
+        <label for="bio">Биография</label><br>
+        <textarea id="bio" name="bio" rows="3"></textarea>
+    </p>
+    <p>
+        <label><input type="checkbox" name="contract" value="yes" required>с контрактом ознакомлен(а)</label>
+    </p>
+    <button type="submit">Сохранить</button>
+</form>
+        </section>
+    </main>
+    <section class="card">
+    <footer class="site-footer">
+    <div class = "container footer-inner">
+        <p>(с) Дмитрий Матвеев</p>
+    </div>
+    </footer>
+</body>
+</html>
