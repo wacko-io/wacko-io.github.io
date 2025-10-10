@@ -1,33 +1,54 @@
 //лоудер
-(function() {
-    'use strict';
+/*jslint browser, long */
+/*global window, document, performance, Math */
+/*property
+    add,
+    addEventListener,
+    classList,
+    getElementById,
+    hidden,
+    once,
+    readyState,
+    max,
+    now,
+    setTimeout
+*/
+
+(function () {
+    "use strict";
 
     const MIN_SHOW_TIME = 2100;
     const MAX_SHOW_TIME = 5000;
 
     function initLoader() {
-        const loader = document.getElementById('loader');
-        if (!loader) return;
+        const loader = document.getElementById("loader");
+        if (!loader) {
+            return;
+        }
 
         const startTime = performance.now();
 
         function hideLoader() {
-            loader.classList.add('hidden');
+            loader.classList.add("hidden");
         }
 
-        window.addEventListener('load', () => {
+        function onLoad() {
             const elapsed = performance.now() - startTime;
             const delay = Math.max(0, MIN_SHOW_TIME - elapsed);
+            window.setTimeout(hideLoader, delay);
+        }
 
-            setTimeout(hideLoader, delay);
-        }, { once: true });
-
-        setTimeout(hideLoader, MAX_SHOW_TIME);
+        window.addEventListener("load", onLoad, {once: true});
+        window.setTimeout(hideLoader, MAX_SHOW_TIME);
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLoader, { once: true });
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initLoader,
+            {once: true}
+        );
     } else {
         initLoader();
     }
-})();
+}());
