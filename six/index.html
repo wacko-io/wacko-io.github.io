@@ -1,0 +1,155 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6 задание</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/service-calculator.css">
+
+    <script src="js/models.js"></script>
+    <script src="js/loader.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/service-calculator.js" defer></script>
+</head>
+<body>
+<svg class="loader-svg" aria-hidden="true">
+    <defs>
+        <filter id="gooLoader">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12"></feGaussianBlur>
+            <feColorMatrix values="1 0 0 0 0
+                             0 1 0 0 0
+                             0 0 1 0 0
+                             0 0 0 48 -7"></feColorMatrix>
+        </filter>
+    </defs>
+</svg>
+
+<div class="loader-overlay" id="loader" aria-hidden="true">
+    <div role="status" aria-live="polite" aria-label="Загрузка приложения">
+        <div class="loader"></div>
+    </div>
+</div>
+
+<main class="card">
+    <div class="card-left">
+        <section class="hero" aria-label="Изображение автомобиля">
+            <div class="hero-image-wrapper">
+                <div class="image-skeleton" id="imageSkeleton"></div>
+                <img id="heroImage" class="hero-image loading" src="images/911.png" alt="Porsche 911">
+            </div>
+        </section>
+        <header class="header">
+            <h1 class="title" id="modelTitle">Porsche 911</h1>
+            <p class="subtitle" id="modelSubtitle">Цена: 13 700 000 ₽</p>
+            <ul class="specs">
+                <li class="spec-item">
+                    <span class="spec-value" id="accelValue">2,5 с</span>
+                    <span class="spec-label">0–100 км/ч</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-value" id="powerValue">523 кВт</span>
+                    <span class="spec-label">Мощность</span>
+                </li>
+                <li class="spec-item">
+                    <span class="spec-value" id="vmaxValue">322 км/ч</span>
+                    <span class="spec-label">Макс. скорость</span>
+                </li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="card-right">
+        <div class="calculators-row">
+            <section class="service-calc" aria-labelledby="svcTitle">
+                <h2 class="service-calc__title" id="svcTitle">Калькулятор услуги</h2>
+
+                <fieldset class="service-calc__row svc-type">
+                    <legend>Тип услуги</legend>
+                    <label><input type="radio" name="svc-type" value="t1" checked> Без услуги</label>
+                    <label><input type="radio" name="svc-type" value="t2"> Комплектация</label>
+                    <label><input type="radio" name="svc-type" value="t3"> Дополнительная опция</label>
+                </fieldset>
+
+                <div class="service-calc__row" id="svc-select-wrap" hidden>
+                    <label for="svc-option">Опция/комплектация</label>
+
+                    <div class="cs" id="cs-svc-option">
+                        <button type="button" class="cs__button" id="cs-btn"
+                                aria-haspopup="listbox" aria-expanded="false"
+                                aria-controls="cs-list">
+                            <span class="cs__label" id="cs-label">—</span>
+                            <span class="cs__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="cs__list" id="cs-list" role="listbox" tabindex="-1"></ul>
+                    </div>
+
+                    <select id="svc-option" class="cs__select--hidden"></select>
+                </div>
+
+                <label class="service-calc__row service-calc__row--inline" id="svc-checkbox-wrap" hidden>
+                    <span id="svc-prop-label"></span>
+                    <span class="bw-toggle">
+            <input id="svc-prop" type="checkbox" class="bw-toggle__input" aria-label="Включить доп. опцию">
+            <span class="bw-toggle__slider" aria-hidden="true"></span>
+          </span>
+                </label>
+
+                <div class="service-calc__total" aria-live="polite">
+                    Итого за услугу: <strong id="svc-total">—</strong>
+                </div>
+            </section>
+
+            <section class="calculator" aria-labelledby="calcTitle">
+                <h2 class="calc-title" id="calcTitle">Оформить заказ</h2>
+
+                <div class="form-group">
+                    <label class="form-label" for="modelSelect">Модель</label>
+                    <div class="cs" id="cs-model-select">
+                        <button type="button" class="cs__button" id="cs-model-btn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="cs__label" id="cs-model-label">—</span>
+                            <span class="cs__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="cs__list" id="cs-model-list" role="listbox" tabindex="-1"></ul>
+                    </div>
+                    <select id="modelSelect" class="cs__select--hidden">
+                        <option value="911">Porsche 911 — 27 100 000 ₽</option>
+                        <option value="718">Porsche 718 — 15 870 000 ₽</option>
+                        <option value="panamera">Porsche Panamera — 14 400 000 ₽</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="quantityInput">Количество</label>
+                    <div class="input-wrapper">
+                        <input
+                                type="number"
+                                id="quantityInput"
+                                inputmode="numeric"
+                                min="1"
+                                step="1"
+                                placeholder="Например: 1"
+                                aria-describedby="quantityError"
+                        >
+                    </div>
+                    <div class="error-message" id="quantityError" role="alert"></div>
+                </div>
+
+                <button class="button" id="calculateBtn" type="button">Рассчитать стоимость</button>
+
+                <div class="result" id="result">
+                    <span class="result-label">Итого:</span>
+                    <strong class="result-value" id="totalValue">—</strong>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+</body>
+</html>

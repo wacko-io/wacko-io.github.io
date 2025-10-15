@@ -1,0 +1,69 @@
+/* css/loader.css */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    display: grid;
+    place-items: center;
+    z-index: 10000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--transition-slow), visibility var(--transition-slow);
+}
+.loader-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.loader-svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.loader {
+    width: 192px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid #fff;
+    filter: url(#gooLoader);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+.loader::before {
+    content: "";
+    width: 352px;
+    height: 288px;
+    background: linear-gradient(135deg, #fff 0%, #fff 100%);
+    position: absolute;
+    border-radius: 50%;
+    left: -32px;
+    bottom: -288px;
+    animation: gooey-wave-1 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+@keyframes gooey-wave-1 {
+    0% {
+        transform: translateX(-160px) rotate(0);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(112px) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+@keyframes gooey-wave-2 {
+    0% {
+        transform: translateX(-128px) rotate(0);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(128px) rotate(180deg);
+        opacity: 0.7;
+    }
+}
