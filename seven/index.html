@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porsche Slider</title>
+
+  <script type="module" crossorigin src="/seven/assets/index-CYm8c58w.js"></script>
+  <link rel="stylesheet" crossorigin href="/seven/assets/index-BSxM5g_I.css">
+</head>
+
+<body>
+<div class="slider">
+  <div class="slider--frame">
+    <div class="slider--stage">
+      <div class="slides__wrapper">
+        <div class="slides">
+          <div class="slide" data-current>
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-911-gt3.jpg" alt="Porsche 911 GT3 carving through a racetrack corner" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-911-gt3.jpg); --dir: 0" data-current></div>
+
+          <div class="slide" data-next>
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-911-carrera-s.jpg" alt="Porsche 911 Carrera S parked on a mountain overlook" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-911-carrera-s.jpg); --dir: 1" data-next></div>
+
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-taycan-turbo-s.jpg" alt="Porsche Taycan Turbo S in a minimalist driveway" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-taycan-turbo-s.jpg); --dir: 2"></div>
+
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-718-cayman-gt4.jpg" alt="Porsche 718 Cayman GT4 finished in cobalt blue" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-718-cayman-gt4.jpg); --dir: 3"></div>
+
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-panamera-turbo.jpg" alt="Porsche Panamera Turbo gliding along the coast" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-panamera-turbo.jpg); --dir: 4"></div>
+
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-macan-gts.jpg" alt="Porsche Macan GTS taking a coastal corner" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-macan-gts.jpg); --dir: 5"></div>
+
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-cayenne-coupe.jpg" alt="Porsche Cayenne Coupe cruising through downtown" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-cayenne-coupe.jpg); --dir: 6"></div>
+
+          <div class="slide" data-previous>
+            <div class="slide__inner">
+              <div class="slide--image__wrapper">
+                <img class="slide--image" src="/seven/images/porsche-356-speedster.jpg" alt="Classic Porsche 356 Speedster in silver" />
+              </div>
+            </div>
+          </div>
+          <div class="slide__bg" style="--bg: url(/seven/images/porsche-356-speedster.jpg); --dir: -1" data-previous></div>
+        </div>
+      </div>
+    </div>
+    <div class="slider--controls">
+      <button class="slider--btn slider--btn__prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+
+      <div class="slider--pager" aria-live="polite">
+        <span class="slider--pager__current">1</span>
+        <span class="slider--pager__separator">/</span>
+        <span class="slider--pager__total">8</span>
+      </div>
+
+      <button class="slider--btn slider--btn__next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+    </div>
+  </div>
+        </div>
+
+        <div class="loader">
+            <div class="loader__spinner"></div>
+            <span class="loader__label">Loading…</span>
+        </div>
+
+    </body>
+</html>
